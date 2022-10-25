@@ -29,6 +29,10 @@ const routes = createBrowserRouter(
         {
           path: '/blog',
           element: <Blog></Blog>
+        },
+        {
+          path: '*',
+          element: <div><h1>Error 404</h1><h4>Page not found!!!</h4><p>Make sure you have entered correct url.</p></div>
         }
       ]
   }]
