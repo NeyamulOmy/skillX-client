@@ -40,7 +40,7 @@ const routes = createBrowserRouter(
 function App() {
   const { theme } = useContext(LDContext)
   return (
-    <div className="App" id={theme} >
+    <div className="" id={theme} >
       <RouterProvider router={routes}></RouterProvider>
     </div>
   );
