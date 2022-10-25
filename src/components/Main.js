@@ -1,11 +1,10 @@
 import React from 'react';
-import { Navbar } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
-
+import NavigationBar from '../layout/navbar/NavigationBar';
 const Main = () => {
     return (
         <div>
-            <Navbar></Navbar>
+            <NavigationBar></NavigationBar>
             <Outlet></Outlet>
         </div>
     );
