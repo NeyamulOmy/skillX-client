@@ -8,6 +8,7 @@ import { GiBrain } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 import ReactSwitch from 'react-switch';
 import { LDContext } from '../../contexts/ThemeContext';
+
 const NavigationBar = () => {
     const { theme, toggleTheme } = useContext(LDContext)
 
@@ -24,6 +25,7 @@ const NavigationBar = () => {
                         <Nav.Link as={Link} to="blog">Blog</Nav.Link>
                     </Nav>
                     <Nav>
+                        <Nav.Link as={Link} to="login">Login</Nav.Link>
                         <Nav.Link as={Link} to="faq">FAQ</Nav.Link>
                         <Navbar.Text className='ms-4 me-1'>{theme} Mode</Navbar.Text>
                         <Navbar.Text><ReactSwitch onChange={toggleTheme} checked={theme === 'Dark'} /></Navbar.Text>
