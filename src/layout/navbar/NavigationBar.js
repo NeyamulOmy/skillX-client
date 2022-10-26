@@ -10,6 +10,7 @@ import ReactSwitch from 'react-switch';
 import { LDContext } from '../../contexts/ThemeContext';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa'
+import { Image } from 'react-bootstrap';
 const NavigationBar = () => {
     const { theme, toggleTheme } = useContext(LDContext)
     const { user } = useContext(AuthContext)
@@ -30,7 +31,10 @@ const NavigationBar = () => {
                         <Nav.Link as={Link} to="faq">FAQ</Nav.Link>
                         <Navbar.Text className='ms-4 me-1'>{theme} Mode</Navbar.Text>
                         <Navbar.Text><ReactSwitch onChange={toggleTheme} checked={theme === 'Dark'} /></Navbar.Text>
-                        <Navbar.Text className='ms-3 userImage'>{user ? <img alt="" src={user.photoURL} /> : <FaUserCircle size={30} />}</Navbar.Text>
+                        <Navbar.Text className='ms-3 userImage'>{
+                            user?.photoURL ?
+                                <Image style={{ height: '30px' }} roundedCircle src={user.photoURL}></Image> : <FaUserCircle size={30}></FaUserCircle>
+                        }</Navbar.Text>
 
                     </Nav>
                 </Navbar.Collapse>
