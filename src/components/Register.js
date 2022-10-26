@@ -3,7 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import './Login.css'
+
+
+
 const Register = () => {
+
     return (
         <div className='form-container mx-auto mt-5'>
             <h2>Sign up</h2>
