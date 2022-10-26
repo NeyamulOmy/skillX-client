@@ -9,6 +9,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { useContext } from 'react';
 import { LDContext } from './contexts/ThemeContext';
 import Register from './components/Register';
+import Course from './components/Course';
 
 const routes = createBrowserRouter(
   [{
@@ -21,8 +22,15 @@ const routes = createBrowserRouter(
           element: <Home></Home>
         },
         {
-          path: 'courses',
-          element: <Courses></Courses>
+          path: '/courses',
+          element: <Courses></Courses>,
+          loader: () => {
+            fetch('http://localhost:5000/courses/')
+          }
+        },
+        {
+          path: 'course/:id',
+          element: <Course></Course>
         },
         {
           path: 'faq',
