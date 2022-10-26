@@ -11,7 +11,7 @@ const SideBar = () => {
             .then(data => setCourses(data));
     }, [])
     return (
-        <div>
+        <div className=''>
             <h5>Courses: {courses.length}</h5>
             <div>
                 {

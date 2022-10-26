@@ -5,12 +5,12 @@ import SideBar from './SideBar';
 
 const Courses = () => {
     return (
-        <Container fluid>
+        <Container className='pt-5' fluid>
             <Row>
-                <Col className='ms-5'>
+                <Col className='ms-5 col-4'>
                     <SideBar></SideBar>
                 </Col>
-                <Col>
+                <Col className=''>
                     <AllCourses></AllCourses>
                 </Col>
             </Row>

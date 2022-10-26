@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 const AllCourses = () => {
     const [courses, setCourses] = useState([]);
 
@@ -14,13 +14,13 @@ const AllCourses = () => {
     return (
         <div className='row me-5'>
             {courses.map(course => <Card bg='info' className='col-6 mx-2 my-4' key={course.id} style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={course.img} />
+                <Card.Img style={{ height: '200px' }} variant="top" src={course.img} />
                 <Card.Body>
                     <Card.Title>{course.title}</Card.Title>
-                    <Card.Text>
+                    <Card.Text className='text-truncate'>
                         {course.description}
                     </Card.Text>
-                    <Button variant="primary">Go to course</Button>
+                    <Button as={Link} to={`../course/${course.id}`} variant="primary">Go to course</Button>
                 </Card.Body>
             </Card>)}
 

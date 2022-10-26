@@ -23,14 +23,15 @@ const routes = createBrowserRouter(
         },
         {
           path: '/courses',
-          element: <Courses></Courses>,
-          loader: () => {
-            fetch('http://localhost:5000/courses/')
-          }
+          element: <Courses></Courses>
+
+
         },
         {
-          path: 'course/:id',
-          element: <Course></Course>
+          path: '/course/:id',
+          element: <Course></Course>,
+          loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+
         },
         {
           path: 'faq',
