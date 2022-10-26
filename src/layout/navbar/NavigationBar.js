@@ -10,11 +10,15 @@ import ReactSwitch from 'react-switch';
 import { LDContext } from '../../contexts/ThemeContext';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa'
-import { Image } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
 const NavigationBar = () => {
     const { theme, toggleTheme } = useContext(LDContext)
-    const { user } = useContext(AuthContext)
-
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogOut = () => {
+        logOut()
+            .then(request => { })
+            .catch(error => { console.error(error) })
+    }
     return (
 
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -27,14 +31,23 @@ const NavigationBar = () => {
                         <Nav.Link as={Link} to="blog">Blog</Nav.Link>
                     </Nav>
                     <Nav className='ms-auto align-items-center'>
-                        <Nav.Link as={Link} to="login">Login</Nav.Link>
                         <Nav.Link as={Link} to="faq">FAQ</Nav.Link>
+
+                        {user?.uid ?
+                            <><Navbar.Text className='ms-3 userImage'>{
+                                user?.photoURL ?
+                                    <Image referrerPolicy="no-referrer" style={{ height: '30px' }} roundedCircle src={user.photoURL}></Image> : <FaUserCircle size={30}></FaUserCircle>
+                            }
+                                {user?.displayName ? <Navbar.Text> {user.displayName}</Navbar.Text> : <></>}
+                            </Navbar.Text>
+                                <Button onClick={handleLogOut} variant='outline-danger' className='ms-2'>Log out</Button>
+                            </> :
+                            <><Nav.Link as={Link} to="login">Login</Nav.Link></>}
                         <Navbar.Text className='ms-4 me-1'>{theme} Mode</Navbar.Text>
                         <Navbar.Text><ReactSwitch onChange={toggleTheme} checked={theme === 'Dark'} /></Navbar.Text>
-                        <Navbar.Text className='ms-3 userImage'>{
-                            user?.photoURL ?
-                                <Image style={{ height: '30px' }} roundedCircle src={user.photoURL}></Image> : <FaUserCircle size={30}></FaUserCircle>
-                        }</Navbar.Text>
+
+
+
 
                     </Nav>
                 </Navbar.Collapse>
