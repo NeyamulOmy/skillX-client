@@ -1,0 +1,89 @@
+[debug] [2022-10-26T13:38:21.521Z] ----------------------------------------------------------------------
+[debug] [2022-10-26T13:38:21.524Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-10-26T13:38:21.524Z] CLI Version:   11.15.0
+[debug] [2022-10-26T13:38:21.525Z] Platform:      win32
+[debug] [2022-10-26T13:38:21.525Z] Node Version:  v16.17.1
+[debug] [2022-10-26T13:38:21.526Z] Time:          Wed Oct 26 2022 19:38:21 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-10-26T13:38:21.526Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-26T13:38:21.621Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-26T13:38:21.623Z] > authorizing via signed-in user (neyamul.omy@gmail.com)
+[debug] [2022-10-26T13:38:21.623Z] [iam] checking project skillx-auth for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-10-26T13:38:21.625Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/skillx-auth:testIamPermissions [none]
+[debug] [2022-10-26T13:38:21.625Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/skillx-auth:testIamPermissions x-goog-quota-user=projects/skillx-auth
+[debug] [2022-10-26T13:38:21.625Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/skillx-auth:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-10-26T13:38:23.011Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/skillx-auth:testIamPermissions 200
+[debug] [2022-10-26T13:38:23.012Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/skillx-auth:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-10-26T13:38:23.013Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/skillx-auth [none]
+[debug] [2022-10-26T13:38:23.737Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/skillx-auth 200
+[debug] [2022-10-26T13:38:23.737Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/skillx-auth {"projectId":"skillx-auth","projectNumber":"1014335188488","displayName":"skillx-auth","name":"projects/skillx-auth","resources":{"hostingSite":"skillx-auth"},"state":"ACTIVE","etag":"1_69d734a7-806c-47bc-8f6f-093ab77b6f5a"}
+[info] 
+[info] === Deploying to 'skillx-auth'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-10-26T13:38:23.740Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/skillx-auth/versions [none]
+[debug] [2022-10-26T13:38:23.740Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/skillx-auth/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-10-26T13:38:25.220Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/skillx-auth/versions 200
+[debug] [2022-10-26T13:38:25.220Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/skillx-auth/versions {"name":"projects/1014335188488/sites/skillx-auth/versions/ec23320bd655824a","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[skillx-auth]: beginning deploy... 
+[info] i  hosting[skillx-auth]: found 14 files in build 
+[debug] [2022-10-26T13:38:25.232Z] [hosting] uploading with 200 concurrency
+[debug] [2022-10-26T13:38:25.239Z] [hosting] hash cache [YnVpbGQ] stored for 14 files
+[debug] [2022-10-26T13:38:25.239Z] [hosting][hash queue][FINAL] {"max":2,"min":0,"avg":0,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":4}
+[debug] [2022-10-26T13:38:25.240Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/1014335188488/sites/skillx-auth/versions/ec23320bd655824a:populateFiles [none]
+[debug] [2022-10-26T13:38:25.240Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1014335188488/sites/skillx-auth/versions/ec23320bd655824a:populateFiles {"files":{"/asset-manifest.json":"b6f735e4f90157b0d6730367818ca7bb2aa94766f08be48d863297b314d49b71","/favicon.ico":"5b0c9e1f3405baca12dadf642962cea34de1bc1055da24ae38edd2f979f82399","/index.html":"d88669861471805fd4897879d7a82704275fa41c81cb83a4f39d2e6c0aa4263d","/logo192.png":"3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b","/logo512.png":"ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331","/manifest.json":"aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/static/css/main.886222d9.css":"e6e8ea5fdcf83538d6cc3a05b7890f42aba838eb616d93f2fd5f66c38bff033e","/static/css/main.886222d9.css.map":"bd697acce6032664fc8fca66dacdd18e3c9bef97656c8ce6013623fe57a9334d","/static/js/787.43f43547.chunk.js":"18cb9e39fbe2d95f1f95c13adffa25885dd3b303ac88d0a74f682c8b9fe905d7","/static/js/787.43f43547.chunk.js.map":"52f94786d1fae788980e195b7cce2c5f96d95aa1a614b59c18ce297cb1d25090","/static/js/main.fa7fb9dc.js":"2bd038bbdffdbc7d1fe7ad7437b2d000ed106daa6a941eb42e8dd3ce0d95f807","/static/js/main.fa7fb9dc.js.LICENSE.txt":"1a2b94732ee07b5b8b1a00815d2d007bbefb4911140bb64bf9685035ac1ab7e0","/static/js/main.fa7fb9dc.js.map":"a964ac15a8c05a07774f4bd2d7d9e00c68b5c21041f643bb9defad7cece65ac7"}}
+[debug] [2022-10-26T13:38:39.665Z] [populateQueue] Retrying task index 0
+[debug] [2022-10-26T13:38:39.666Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/1014335188488/sites/skillx-auth/versions/ec23320bd655824a:populateFiles [none]
+[debug] [2022-10-26T13:38:39.666Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1014335188488/sites/skillx-auth/versions/ec23320bd655824a:populateFiles {"files":{"/asset-manifest.json":"b6f735e4f90157b0d6730367818ca7bb2aa94766f08be48d863297b314d49b71","/favicon.ico":"5b0c9e1f3405baca12dadf642962cea34de1bc1055da24ae38edd2f979f82399","/index.html":"d88669861471805fd4897879d7a82704275fa41c81cb83a4f39d2e6c0aa4263d","/logo192.png":"3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b","/logo512.png":"ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331","/manifest.json":"aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/static/css/main.886222d9.css":"e6e8ea5fdcf83538d6cc3a05b7890f42aba838eb616d93f2fd5f66c38bff033e","/static/css/main.886222d9.css.map":"bd697acce6032664fc8fca66dacdd18e3c9bef97656c8ce6013623fe57a9334d","/static/js/787.43f43547.chunk.js":"18cb9e39fbe2d95f1f95c13adffa25885dd3b303ac88d0a74f682c8b9fe905d7","/static/js/787.43f43547.chunk.js.map":"52f94786d1fae788980e195b7cce2c5f96d95aa1a614b59c18ce297cb1d25090","/static/js/main.fa7fb9dc.js":"2bd038bbdffdbc7d1fe7ad7437b2d000ed106daa6a941eb42e8dd3ce0d95f807","/static/js/main.fa7fb9dc.js.LICENSE.txt":"1a2b94732ee07b5b8b1a00815d2d007bbefb4911140bb64bf9685035ac1ab7e0","/static/js/main.fa7fb9dc.js.map":"a964ac15a8c05a07774f4bd2d7d9e00c68b5c21041f643bb9defad7cece65ac7"}}
+[debug] [2022-10-26T13:38:40.808Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/1014335188488/sites/skillx-auth/versions/ec23320bd655824a:populateFiles 200
+[debug] [2022-10-26T13:38:40.808Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1014335188488/sites/skillx-auth/versions/ec23320bd655824a:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/skillx-auth/versions/ec23320bd655824a/files"}
+[debug] [2022-10-26T13:38:40.808Z] [hosting][populate queue][FINAL] {"max":1142,"min":1142,"avg":1142,"active":0,"complete":1,"success":1,"errored":0,"retried":1,"total":1,"elapsed":15570}
+[debug] [2022-10-26T13:38:40.808Z] [hosting] uploads queued: 0
+[debug] [2022-10-26T13:38:40.808Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1666791520808}
+[info] +  hosting[skillx-auth]: file upload complete 
+[debug] [2022-10-26T13:38:40.809Z] [hosting] deploy completed after 15587ms
+[debug] [2022-10-26T13:38:40.811Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "skillx-auth"
+    },
+    "version": "projects/1014335188488/sites/skillx-auth/versions/ec23320bd655824a"
+  }
+]
+[info] i  hosting[skillx-auth]: finalizing version... 
+[debug] [2022-10-26T13:38:40.813Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/skillx-auth/versions/ec23320bd655824a updateMask=status%2Cconfig
+[debug] [2022-10-26T13:38:40.814Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/skillx-auth/versions/ec23320bd655824a {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2022-10-26T13:38:42.016Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/skillx-auth/versions/ec23320bd655824a 200
+[debug] [2022-10-26T13:38:42.016Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/skillx-auth/versions/ec23320bd655824a {"name":"projects/1014335188488/sites/skillx-auth/versions/ec23320bd655824a","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-10-26T13:38:25.995156Z","createUser":{"email":"neyamul.omy@gmail.com"},"finalizeTime":"2022-10-26T13:38:43.268036Z","finalizeUser":{"email":"neyamul.omy@gmail.com"}}
+[debug] [2022-10-26T13:38:42.016Z] [hosting] finalized version for skillx-auth:[object Object]
+[info] +  hosting[skillx-auth]: version finalized 
+[info] i  hosting[skillx-auth]: releasing new version... 
+[debug] [2022-10-26T13:38:42.017Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/skillx-auth/channels/live/releases versionName=projects%2F1014335188488%2Fsites%2Fskillx-auth%2Fversions%2Fec23320bd655824a
+[debug] [2022-10-26T13:38:42.017Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/skillx-auth/channels/live/releases {}
+[debug] [2022-10-26T13:38:43.298Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/skillx-auth/channels/live/releases 200
+[debug] [2022-10-26T13:38:43.298Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/skillx-auth/channels/live/releases {"name":"projects/1014335188488/sites/skillx-auth/channels/live/releases/1666791523819682","version":{"name":"projects/1014335188488/sites/skillx-auth/versions/ec23320bd655824a","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-10-26T13:38:25.995156Z","createUser":{"email":"neyamul.omy@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu2UE3NTWHt1VYN0VWY52cVPbSIGdMGUv42clQGqw4g"},"finalizeTime":"2022-10-26T13:38:43.268036Z","finalizeUser":{"email":"neyamul.omy@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu2UE3NTWHt1VYN0VWY52cVPbSIGdMGUv42clQGqw4g"}},"type":"DEPLOY","releaseTime":"2022-10-26T13:38:43.819682240Z","releaseUser":{"email":"neyamul.omy@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu2UE3NTWHt1VYN0VWY52cVPbSIGdMGUv42clQGqw4g"}}
+[debug] [2022-10-26T13:38:43.298Z] [hosting] release: {"name":"projects/1014335188488/sites/skillx-auth/channels/live/releases/1666791523819682","version":{"name":"projects/1014335188488/sites/skillx-auth/versions/ec23320bd655824a","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-10-26T13:38:25.995156Z","createUser":{"email":"neyamul.omy@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu2UE3NTWHt1VYN0VWY52cVPbSIGdMGUv42clQGqw4g"},"finalizeTime":"2022-10-26T13:38:43.268036Z","finalizeUser":{"email":"neyamul.omy@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu2UE3NTWHt1VYN0VWY52cVPbSIGdMGUv42clQGqw4g"}},"type":"DEPLOY","releaseTime":"2022-10-26T13:38:43.819682240Z","releaseUser":{"email":"neyamul.omy@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ALm5wu2UE3NTWHt1VYN0VWY52cVPbSIGdMGUv42clQGqw4g"}}
+[info] +  hosting[skillx-auth]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/skillx-auth/overview
+[info] Hosting URL: https://skillx-auth.web.app
+[debug] [2022-10-26T13:38:53.533Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[error] 
+[error] Error: An unexpected error has occurred.

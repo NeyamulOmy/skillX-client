@@ -3,11 +3,11 @@ import React from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
 import './Login.css'
 const Login = () => {
-
+    const navigate = useNavigate()
     const { providerLogin, signIn } = useContext(AuthContext)
 
     const handleLogin = (event) => {
@@ -19,7 +19,10 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 console.log(user)
+                form.reset();
+                navigate('/')
             })
+            .catch(error => { console.error(error) })
     }
     const googleProvider = new GoogleAuthProvider()
 

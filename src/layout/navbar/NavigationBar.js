@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
 import './NavigationBar.css'
 import { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
@@ -36,9 +37,9 @@ const NavigationBar = () => {
                         {user?.uid ?
                             <><Navbar.Text className='ms-3 userImage'>{
                                 user?.photoURL ?
-                                    <Image referrerPolicy="no-referrer" style={{ height: '30px' }} roundedCircle src={user.photoURL}></Image> : <FaUserCircle size={30}></FaUserCircle>
+                                    <><Image data-tip data-for='userName' referrerPolicy="no-referrer" style={{ height: '30px' }} roundedCircle src={user.photoURL}></Image><ReactTooltip id='userName'> {user.displayName}</ReactTooltip></> : <FaUserCircle size={30}></FaUserCircle>
                             }
-                                {user?.displayName ? <Navbar.Text> {user.displayName}</Navbar.Text> : <></>}
+
                             </Navbar.Text>
                                 <Button onClick={handleLogOut} variant='outline-danger' className='ms-2'>Log out</Button>
                             </> :
