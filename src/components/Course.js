@@ -7,7 +7,7 @@ const Course = () => {
     const ref = React.createRef();
     return (
         <div className='text-center'>
-            <Pdf targetRef={ref} filename="code-example.pdf">
+            <Pdf targetRef={ref} filename="Course.pdf">
                 {({ toPdf }) => <Button variant='danger' onClick={toPdf}>Generate Pdf</Button>}
             </Pdf><br />
             <Image style={{ width: '500px', marginTop: '10px' }} rounded src={course.img}></Image>
