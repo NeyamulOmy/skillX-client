@@ -9,6 +9,12 @@ Website Link: https://skillx-auth.web.app/
 * Server side API
 * Blog etc.
 
+#Frameworks/Libraries used
+* Firebase
+* react-icons
+* react-router-dom
+* react-bootstrap etc.
+
 
 
 
