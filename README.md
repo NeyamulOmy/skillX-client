@@ -1,3 +1,36 @@
+Website name: SkillX
+Website Link: https://skillx-auth.web.app/
+
+#Features and Functionality
+* Email & password authentication
+* Google/Github signInWithPopUp
+* Private Route
+* Easily switchable themes
+* Server side API
+* Blog etc.
+
+#Frameworks/Libraries used
+* Firebase
+* react-icons
+* react-router-dom
+* react-bootstrap etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
