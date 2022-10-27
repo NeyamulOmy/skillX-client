@@ -1,5 +1,6 @@
 Website name: SkillX
 Website Link: https://skillx-auth.web.app/
+
 #Features and Functionality
 * Email & password authentication
 * Google/Github signInWithPopUp
