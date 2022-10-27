@@ -10,6 +10,7 @@ import { useContext } from 'react';
 import { LDContext } from './contexts/ThemeContext';
 import Register from './components/Register';
 import Course from './components/Course';
+import CheckOut from './components/CheckOut';
 
 const routes = createBrowserRouter(
   [{
@@ -30,6 +31,12 @@ const routes = createBrowserRouter(
         {
           path: '/course/:id',
           element: <Course></Course>,
+          loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+
+        },
+        {
+          path: '/checkout/:id',
+          element: <CheckOut></CheckOut>,
           loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
 
         },
