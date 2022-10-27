@@ -15,7 +15,7 @@ const Faq = () => {
             </div>
             <div className='mt-3'>
                 <h5>How expensive is SkillX?</h5>
-                <p>Prices may vary from course to course</p>
+                <p>Though SkillX prices are very reasonalble, Prices may vary from course to course.</p>
             </div>
             <div className='mt-3'>
                 <h5>How can I teach on SkillX?</h5>
