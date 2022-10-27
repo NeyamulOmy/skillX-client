@@ -1,5 +1,6 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -11,8 +12,10 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
     const { providerLogin, signIn } = useContext(AuthContext)
-
+    const [passwordError, setPasswordError] = useState('');
     const handleLogin = (event) => {
+
+
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
@@ -24,7 +27,10 @@ const Login = () => {
                 form.reset();
                 navigate(from, { replace: true })
             })
-            .catch(error => { console.error(error) })
+            .catch(error => {
+                console.error(error)
+                setPasswordError(error.message)
+            })
     }
     const googleProvider = new GoogleAuthProvider()
 
@@ -49,6 +55,7 @@ const Login = () => {
     return (
         <div className='form-container mx-auto mt-5'>
             <h2>Login</h2>
+            <div className="text-danger">{passwordError}</div>
             <Form onSubmit={handleLogin} className='form-container'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -63,6 +70,7 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
+
             </Form>
             <div className='mt-2'>
                 <Button onClick={handleGoogleSignIn} variant="danger" type="submit">
