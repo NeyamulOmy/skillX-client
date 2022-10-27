@@ -11,6 +11,7 @@ import { LDContext } from './contexts/ThemeContext';
 import Register from './components/Register';
 import Course from './components/Course';
 import CheckOut from './components/CheckOut';
+import PrivateRoute from './components/PrivateRoute';
 
 const routes = createBrowserRouter(
   [{
@@ -36,7 +37,7 @@ const routes = createBrowserRouter(
         },
         {
           path: '/checkout/:id',
-          element: <CheckOut></CheckOut>,
+          element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
           loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
 
         },
