@@ -31,7 +31,7 @@ const NavigationBar = () => {
                         <Nav.Link as={Link} to="courses">Courses</Nav.Link>
                         <Nav.Link as={Link} to="blog">Blog</Nav.Link>
                     </Nav>
-                    <Nav className='ms-auto align-items-center'>
+                    <Nav className='ms-auto '>
                         <Nav.Link as={Link} to="faq">FAQ</Nav.Link>
 
                         {user?.uid ?
@@ -44,7 +44,7 @@ const NavigationBar = () => {
                                 <Button onClick={handleLogOut} variant='outline-danger' className='ms-2'>Log out</Button>
                             </> :
                             <><Nav.Link as={Link} to="login">Login</Nav.Link></>}
-                        <Navbar.Text className='ms-4 me-1'>{theme} Mode</Navbar.Text>
+                        <Navbar.Text className=' me-1'>{theme} Mode</Navbar.Text>
                         <Navbar.Text><ReactSwitch onChange={toggleTheme} checked={theme === 'Dark'} /></Navbar.Text>
 
 
