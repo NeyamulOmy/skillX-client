@@ -5,7 +5,7 @@ import Footer from '../layout/footer/Footer';
 import NavigationBar from '../layout/navbar/NavigationBar';
 const Main = () => {
     return (
-        <div id='main'>
+        <div id='main' className='vw-100'>
             <NavigationBar></NavigationBar>
             <Outlet></Outlet>
             <Footer></Footer>

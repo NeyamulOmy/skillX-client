@@ -12,7 +12,7 @@ const AllCourses = () => {
             .then(data => setCourses(data));
     }, [])
     return (
-        <div className='row me-5'>
+        <div className='row'>
             {courses.map(course => <Card bg='info' className='col-6 mx-2 my-4' key={course.id} style={{ width: '18rem' }}>
                 <Card.Img style={{ height: '200px' }} variant="top" src={course.img} />
                 <Card.Body>

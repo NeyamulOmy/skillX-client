@@ -54,13 +54,13 @@ const Login = () => {
             .catch(error => { console.error(error) })
     }
     return (
-        <div className='form-container mx-auto mt-5'>
+        <div className='form-container  mt-5'>
             <h2>Login</h2>
             <div className="text-danger">{passwordError}</div>
             <Form onSubmit={handleLogin} className='form-container'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control name='email' type="email" placeholder="Enter email" />
+                    <Form.Control className='' name='email' type="email" placeholder="Enter email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">

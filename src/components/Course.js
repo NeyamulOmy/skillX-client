@@ -10,8 +10,8 @@ const Course = () => {
             <Pdf targetRef={ref} filename="Course.pdf">
                 {({ toPdf }) => <Button variant='danger' onClick={toPdf}>Generate Pdf</Button>}
             </Pdf><br />
-            <Image style={{ width: '500px', marginTop: '10px' }} rounded src={course.img}></Image>
-            <div ref={ref} style={{ width: "500px" }} className='mx-auto text-center p-5'>
+            <Image style={{ width: '100vw', marginTop: '10px' }} rounded src={course.img}></Image>
+            <div ref={ref} style={{ width: "100vw" }} className='mx-auto text-center p-5'>
                 <h4>{course.title}</h4>
 
                 <p className='mt-5'>{course.description}</p>

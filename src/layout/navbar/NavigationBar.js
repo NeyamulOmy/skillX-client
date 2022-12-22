@@ -22,8 +22,8 @@ const NavigationBar = () => {
     }
     return (
 
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Container>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='vw-100'>
+            <Container className=''>
                 <Navbar.Brand as={Link} to="/"><GiBrain /> SkillX</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

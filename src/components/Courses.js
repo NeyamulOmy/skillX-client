@@ -10,7 +10,7 @@ const Courses = () => {
                 <Col className='ms-5 col-4'>
                     <SideBar></SideBar>
                 </Col>
-                <Col className=''>
+                <Col className='ms-5'>
                     <AllCourses></AllCourses>
                 </Col>
             </Row>
